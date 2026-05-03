@@ -67,10 +67,10 @@
   --container-width: 1400px;
 }
 
-/* Custom Cursor */
+/* Cursor */
 .custom-cursor {
-  width: 12px;
-  height: 12px;
+  width: 15px;
+  height: 15px;
   background-color: var(--color-primary);
   border-radius: 50%;
   position: fixed;
@@ -449,6 +449,21 @@ h1, h2, h3 {
 .btn-brutalist:active {
   transform: translate(2px, 2px);
   box-shadow: 4px 4px 0px black;
+}
+
+/* Secondary Brutalist Button */
+.btn-brutalist.secondary {
+  background: white;
+  box-shadow: 10px 10px 0px var(--color-primary);
+}
+
+.btn-brutalist.secondary:hover {
+  background: var(--color-primary);
+  box-shadow: 14px 14px 0px black;
+}
+
+.btn-brutalist.secondary:active {
+  box-shadow: 4px 4px 0px var(--color-primary);
 }
 
 /* Marquee Styles Upgraded */
