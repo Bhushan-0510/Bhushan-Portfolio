@@ -11,14 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
     orientation: 'vertical',
     gestureOrientation: 'vertical',
     smoothWheel: true,
+    wheelMultiplier: 1,
+    infinite: false,
   });
-
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-
-  requestAnimationFrame(raf);
 
   // Integrate Lenis with ScrollTrigger
   lenis.on('scroll', ScrollTrigger.update);
@@ -136,11 +131,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 5. Mobile Menu Toggle
+  const navbar = document.querySelector('.navbar');
   const navToggle = document.querySelector('.nav-toggle');
   const navMenu = document.querySelector('.nav-menu');
+  const navLinks = document.querySelectorAll('.nav-link');
   
-  if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => {
+  if (navToggle && navMenu && navbar) {
+    const toggleMenu = () => {
+      navbar.classList.toggle('active');
       navToggle.classList.toggle('active');
       navMenu.classList.toggle('active');
       
@@ -163,6 +161,17 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       }
+    };
+
+    navToggle.addEventListener('click', toggleMenu);
+
+    // Close menu on link click
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (navMenu.classList.contains('active')) {
+          toggleMenu();
+        }
+      });
     });
   }
 
