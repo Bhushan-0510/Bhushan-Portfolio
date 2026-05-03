@@ -51,11 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Hero Reveal
   const heroTimeline = gsap.timeline();
   
-  heroTimeline.from('.hero-massive', {
-    y: 150,
+  heroTimeline.from('.hero-line > *', {
+    y: 100,
     opacity: 0,
-    duration: 1.5,
-    stagger: 0.2,
+    duration: 1.2,
+    stagger: 0.15,
     ease: 'power4.out',
     delay: 0.5
   })

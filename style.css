@@ -151,6 +151,15 @@ h1, h2, h3 {
   width: 100%;
 }
 
+.hero-intro {
+  font-family: var(--font-body);
+  font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+}
+
 .outline {
   -webkit-text-stroke: 1px var(--color-text);
   color: transparent;
@@ -175,8 +184,7 @@ h1, h2, h3 {
 }
 
 .container-nav {
-  max-width: var(--container-width);
-  margin: 0 auto;
+  width: 100%;
   padding: 0 4%;
   display: flex;
   justify-content: space-between;
@@ -190,6 +198,8 @@ h1, h2, h3 {
   color: white;
   text-decoration: none;
   z-index: 1001;
+  margin-left: 0%;
+  margin-right:auto;
 }
 
 .nav-menu {
@@ -316,7 +326,7 @@ h1, h2, h3 {
   justify-content: center;
   position: relative;
   overflow: hidden;
-  padding: 0 4%;
+  padding: 8rem 4% 0 4%;
 }
 
 .hero-bg-text {
